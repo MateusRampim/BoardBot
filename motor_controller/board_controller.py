@@ -1,5 +1,6 @@
 import coordinates
 from belt import Belt
+from pen import Pen
 
 import concurrent.futures
 
@@ -10,7 +11,15 @@ class Board:
         self.belt0 = Belt(step=14, dir=15)
         self.belt1 = Belt(step=18, dir=23)
 
+        self.pen = Pen(pin=24, lifted=0, pressed=0);
+
         self.belt0.pos, self.belt1.pos = coordinates.cartesian_to_polar(self.w/2, self.h/2, self.w, self.h)
+
+    def lift_pen(self):
+        self.pen.lift()
+
+    def press_pen(self):
+        self.pen.press()
 
     def go_to(self, x, y):
         x0, y0 = coordinates.polar_to_cartesian(self.belt0.pos, self.belt1.pos, self.w, self.h)
