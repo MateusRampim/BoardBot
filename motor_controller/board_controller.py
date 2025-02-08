@@ -6,8 +6,8 @@ import concurrent.futures
 
 class Board:
     def __init__(self):
-        self.w = 40 # cm
-        self.h = 30 # cm
+        self.w = 400 # mm
+        self.h = 300 # mm
         self.belt0 = Belt(step=14, dir=15)
         self.belt1 = Belt(step=18, dir=23)
 
