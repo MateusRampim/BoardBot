@@ -22,6 +22,13 @@ class Board:
         self.pen.press()
 
     def go_to(self, x, y):
+        r0, r1 = coordinates.cartesian_to_polar(x, y, self.w, self.h)
+
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            f1 = executor.submit(self.belt0.go_to, r0)
+            f2 = executor.submit(self.belt1.go_to, r1)
+
+    def draw_line(self, x, y):
         x0, y0 = coordinates.polar_to_cartesian(self.belt0.pos, self.belt1.pos, self.w, self.h)
         N = 100
         dx = (x-x0) / N
