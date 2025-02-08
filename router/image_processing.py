@@ -11,7 +11,4 @@ def processar_imagem(caminho_imagem):
     # Reduzir ruído
     imagem_suave = cv2.GaussianBlur(imagem_bin, (5, 5), 0)
 
-    # Detectar bordas
-    bordas = cv2.Canny(imagem_suave, 50, 150)
-
-    return bordas
+    return imagem_suave
