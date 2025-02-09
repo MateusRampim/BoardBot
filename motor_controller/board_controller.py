@@ -11,7 +11,7 @@ class Board:
         self.belt0 = Belt(step=14, dir=15)
         self.belt1 = Belt(step=18, dir=23)
 
-        self.pen = Pen(pin=24, lifted=8, pressed=11);
+        self.pen = Pen(pin=24, lifted=1000, pressed=1100);
 
         self.belt0.pos, self.belt1.pos = coordinates.cartesian_to_polar(self.w/2, self.h/2, self.w, self.h)
 

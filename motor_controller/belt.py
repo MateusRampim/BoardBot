@@ -12,5 +12,5 @@ class Belt:
         n_passos = abs(delta_passos)
         dir = delta_passos > 0
 
-        self.motor.motor_go(clockwise=dir, steptype="Full", steps=n_passos, stepdelay=.001, verbose=True, initdelay=.0)
+        self.motor.motor_go(clockwise=dir, steptype="Full", steps=n_passos, stepdelay=.001, verbose=False, initdelay=.0)
         self.pos += delta_passos * self.tamanho_passo
