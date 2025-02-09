@@ -3,10 +3,10 @@ import RPi.GPIO as GPIO
 from RpiMotorLib import RpiMotorLib
     
 GPIO_pins = (-1, -1, -1)
-step0 = 15
-dir0 = 16
+step0 = 14
+dir0 = 15
 step1 = 18
-dir1 = 22
+dir1 = 23
 
 motor0 = RpiMotorLib.A4988Nema(dir0, step0, GPIO_pins, "DRV8825")
 motor1 = RpiMotorLib.A4988Nema(dir1, step1, GPIO_pins, "DRV8825")

@@ -1,4 +1,5 @@
 from RpiMotorLib import rpiservolib
+
 class Pen:
     def __init__(self, pin, lifted, pressed):
         self.pos_lifted = lifted
