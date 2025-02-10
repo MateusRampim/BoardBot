@@ -1,0 +1,10 @@
+opencv-python
+networkx
+scipy
+matplotlib
+flask
+flask_cors
+numpy
+websockets
+requests
+RpiMotorLib

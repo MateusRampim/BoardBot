@@ -2,3 +2,5 @@ opencv-python
 networkx
 scipy
 matplotlib
+flask
+flask_cors
