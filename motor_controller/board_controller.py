@@ -6,12 +6,12 @@ import concurrent.futures
 
 class Board:
     def __init__(self):
-        self.w = 400 # mm
-        self.h = 300 # mm
+        self.w = 540 # mm
+        self.h = 350 # mm
         self.belt0 = Belt(step=14, dir=15)
         self.belt1 = Belt(step=18, dir=23)
 
-        self.pen = Pen(pin=24, lifted=1000, pressed=1100);
+        self.pen = Pen(pin=24, lifted=180, pressed=90);
 
         self.belt0.pos, self.belt1.pos = coordinates.cartesian_to_polar(self.w/2, self.h/2, self.w, self.h)
 
@@ -20,6 +20,9 @@ class Board:
 
     def press_pen(self):
         self.pen.press()
+
+    def go_to_center(self):
+        self.go_to(self.w/2, self.h/2)
 
     def go_to(self, x, y):
         r0, r1 = coordinates.cartesian_to_polar(x, y, self.w, self.h)
@@ -30,7 +33,7 @@ class Board:
 
     def draw_line(self, x, y):
         x0, y0 = coordinates.polar_to_cartesian(self.belt0.pos, self.belt1.pos, self.w, self.h)
-        N = 100
+        N = 50
         dx = (x-x0) / N
         dy = (y-y0) / N
 

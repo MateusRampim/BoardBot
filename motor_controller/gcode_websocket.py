@@ -46,9 +46,9 @@ async def process_gcode(websocket):
 
     for i, line in enumerate(gcode_lines, start=1):
         if cancel_event.is_set():
-            # Ao cancelar, levanta a caneta e move para (0,0)
+            # Ao cancelar, levanta a caneta e move para o centro
             board.lift_pen()
-            board.go_to(0, 0)
+            board.go_to_center()
             await websocket.send(json.dumps({"status": "cancelado"}))
             cancel_task.cancel()
             return
@@ -79,9 +79,9 @@ async def process_gcode(websocket):
         await websocket.send(json.dumps({"progress": progress}))
         await asyncio.sleep(0.1)
     
-    # Ao terminar, levanta a caneta e move para (0, 0) se necessário
+    # Ao terminar, levanta a caneta e move para o centro se necessário
     board.lift_pen()
-    board.go_to(0, 0)
+    board.go_to_center()
     await websocket.send(json.dumps({"status": "finalizado"}))
     cancel_task.cancel()
 

@@ -7,6 +7,7 @@ def processar_imagem(input_imagem):
         imagem = cv2.imread(input_imagem, cv2.IMREAD_GRAYSCALE)
         if imagem is None:
             raise ValueError("Falha ao ler a imagem do caminho fornecido")
+
     # Se já for array da imagem
     elif isinstance(input_imagem, np.ndarray):
         # Verifica se é colorida e converte
