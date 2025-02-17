@@ -21,6 +21,9 @@ class Board:
     def press_pen(self):
         self.pen.press()
 
+    def go_to_center(self):
+        self.go_to(self.w/2, self.h/2)
+
     def go_to(self, x, y):
         r0, r1 = coordinates.cartesian_to_polar(x, y, self.w, self.h)
 

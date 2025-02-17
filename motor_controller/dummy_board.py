@@ -7,6 +7,9 @@ class Board:
     
     def press_pen(self):
         print("Dummy: pressionando a caneta")
+
+    def go_to_center(self):
+        print(f"Dummy: indo para o centro")
     
     def go_to(self, x, y):
         print(f"Dummy: indo para ({x}, {y})")
