@@ -17,7 +17,7 @@ export default function MainScreen() {
 
   // Função auxiliar para obter o host base do WebSocket
   const getWSHost = () => {
-    return Platform.OS === 'android' ? 'ws://10.0.2.2' : 'ws://localhost';
+    return Platform.OS === 'android' ? 'ws://10.0.2.2' : 'ws://10.0.0.1';
   };
 
   const getWebSocketUrl = () => `${getWSHost()}:8765`; // Mesma porta e mesmo servidor para todos
