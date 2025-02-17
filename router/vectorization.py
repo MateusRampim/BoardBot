@@ -14,13 +14,14 @@ def obter_contornos(imagem_bin):
     contornos_fechados = [np.vstack([c, np.array([c[0]])]) for c in contornos_simplificados]
 
     # Normaliza contornos para a área de desenho
-    width = 300
-    height = 250
+    board_width = 540
+    board_height = 350
+    width = 100
+    height = 100
+    offset_x = board_width/2 - width/2
+    offset_y = board_height/2 - height/2
     max_x = max([max(c.reshape(-1, 2)[:,0]) for c in contornos_fechados])
     max_y = max([max(c.reshape(-1, 2)[:,1]) for c in contornos_fechados])
-    contornos_normalizados = [np.array([[[p[0][0]*width/max_x, p[0][1]*height/max_y]] for p in c]) for c in contornos_fechados]
-
-    print(contornos_fechados[0])
-    print(contornos_normalizados[0])
+    contornos_normalizados = [np.array([[[p[0][0]*width/max_x+offset_x, p[0][1]*height/max_y+offset_y]] for p in c]) for c in contornos_fechados]
 
     return contornos_normalizados
