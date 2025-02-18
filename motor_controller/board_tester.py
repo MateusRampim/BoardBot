@@ -1,26 +1,19 @@
 import sys
-if sys.platform == 'win32':
-    from .dummy_board import Board  # Importa o dummy para Windows
-else:
-    from .board_controller import Board  # Importa o board controller fora do rasp
+from board_controller import Board  # Importa o board controller fora do rasp
 
 def main():
     board = Board()
     # Define pontos incluindo extremos e pontos intermediários
     points = [
-        (0, 0),
-        (100, 0),
-        (200, 0),
-        (200, 100),
-        (200, 200),
-        (100, 200),
-        (0, 200),
-        (0, 100),
-        (0, 0)
+        (246, 150),
+        (250, 150),
+        (250, 155),
+        (246, 155),
     ]
     
     # Rotina com caneta levantada
     print("Board Tester iniciado com a caneta levantada.")
+    board.go_to_center()
     board.lift_pen()  # Garante que a caneta esteja levantada
     print("Rotina com caneta levantada iniciada. Pressione Enter para ir ao próximo ponto.")
     for point in points:
@@ -41,7 +34,7 @@ def main():
     
     # Finaliza levantando a caneta e retornando para (0, 0)
     board.lift_pen()
-    board.go_to(0, 0)
+    board.go_to_center()
     print("Teste finalizado com caneta baixada. Caneta levantada e retornada para (0,0).")
 
 if __name__ == "__main__":

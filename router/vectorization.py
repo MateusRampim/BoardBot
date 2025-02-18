@@ -16,10 +16,10 @@ def obter_contornos(imagem_bin):
     # Normaliza contornos para a área de desenho
     board_width = 540
     board_height = 350
-    width = 100
-    height = 100
+    width = 150
+    height = 150
     offset_x = board_width/2 - width/2
-    offset_y = board_height/2 - height/2
+    offset_y = board_height/2 - height/2 + 200
     max_x = max([max(c.reshape(-1, 2)[:,0]) for c in contornos_fechados])
     max_y = max([max(c.reshape(-1, 2)[:,1]) for c in contornos_fechados])
     contornos_normalizados = [np.array([[[p[0][0]*width/max_x+offset_x, p[0][1]*height/max_y+offset_y]] for p in c]) for c in contornos_fechados]

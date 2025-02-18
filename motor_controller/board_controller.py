@@ -11,7 +11,7 @@ class Board:
         self.belt0 = Belt(step=14, dir=15)
         self.belt1 = Belt(step=18, dir=23)
 
-        self.pen = Pen(pin=24, lifted=180, pressed=90);
+        self.pen = Pen(pin=24, lifted=200, pressed=110);
 
         self.belt0.pos, self.belt1.pos = coordinates.cartesian_to_polar(self.w/2, self.h/2, self.w, self.h)
 
@@ -33,7 +33,7 @@ class Board:
 
     def draw_line(self, x, y):
         x0, y0 = coordinates.polar_to_cartesian(self.belt0.pos, self.belt1.pos, self.w, self.h)
-        N = 50
+        N = 100
         dx = (x-x0) / N
         dy = (y-y0) / N
 

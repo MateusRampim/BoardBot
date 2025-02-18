@@ -15,7 +15,7 @@ class Pen:
             end=self.pos_lifted,
             stepdelay=0.01,
             stepsize=1,
-            verbose=False
+            verbose=True
         )
 
     def press(self):
@@ -25,6 +25,6 @@ class Pen:
             end=self.pos_pressed,
             stepdelay=0.01,
             stepsize=1,
-            verbose=False
+            verbose=True
         )
 
