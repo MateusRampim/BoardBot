@@ -9,9 +9,9 @@ class Board:
         self.w = 540 # mm
         self.h = 350 # mm
         self.belt0 = Belt(step=14, dir=15)
-        self.belt1 = Belt(step=18, dir=23)
+        self.belt1 = Belt(step=3, dir=2)
 
-        self.pen = Pen(pin=24, lifted=200, pressed=110);
+        self.pen = Pen(pin=27, lifted=200, pressed=110);
 
         self.belt0.pos, self.belt1.pos = coordinates.cartesian_to_polar(self.w/2, self.h/2, self.w, self.h)
 

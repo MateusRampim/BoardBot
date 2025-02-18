@@ -14,7 +14,7 @@ class Pen:
             start=self.pos_pressed,
             end=self.pos_lifted,
             stepdelay=0.01,
-            stepsize=1,
+            stepsize=2,
             verbose=True
         )
 
@@ -24,7 +24,7 @@ class Pen:
             start=self.pos_lifted,
             end=self.pos_pressed,
             stepdelay=0.01,
-            stepsize=1,
+            stepsize=2,
             verbose=True
         )
 
